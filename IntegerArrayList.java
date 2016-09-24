@@ -2,7 +2,7 @@ public class IntegerArrayList {
 	private int size;
 	private int capacity;
 	private int[] array;
-	private final int GROW_LENGTH = 20;
+	private final int GROW_LENGTH = 10;
 
 	public IntegerArrayList(){
 		size = GROW_LENGTH;
@@ -19,8 +19,8 @@ public class IntegerArrayList {
 
 	// Inserts element e at index i of ArrayList, shifts following elements right
 	public void insert(int e, int i){
-		growIfFull();
 		if(validateIndex(i)){
+			growIfFull();
 			capacity++;
 			for(int a=capacity-2; a>=i; a--){
 				array[a+1] = array[a];
@@ -64,7 +64,7 @@ public class IntegerArrayList {
 			for(int i=0; i<capacity-1; i++){
 				returnString = returnString + array[i] + ", ";
 			}
-			returnString = returnString + array[capacity-1] + "]";
+			returnString = returnString + array[capacity-1] + "] (size " + size + ")";
 			return returnString;
 		}
 	}
