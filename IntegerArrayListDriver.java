@@ -1,4 +1,8 @@
 public class IntegerArrayListDriver {
+	//************************************************************************
+	// IntegerArrayListDriver.java			Author: Benjamin Prud'homme
+	// A driver file to test the functionality of IntegerArrayList.java.
+	//************************************************************************
 	public static void main(String[] args) {
 		IntegerArrayList list = new IntegerArrayList();
 		for(int i=0; i<10; i++){

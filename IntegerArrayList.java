@@ -1,4 +1,8 @@
 public class IntegerArrayList {
+	//************************************************************************
+	// IntegerArrayList.java			Author: Benjamin Prud'homme
+	// An ArrayList implementation for managing integers.
+	//************************************************************************
 	private int size;
 	private int capacity;
 	private int[] array;
