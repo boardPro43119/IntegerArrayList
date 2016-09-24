@@ -17,6 +17,21 @@ public class IntegerArrayList {
 		capacity++;
 	}
 
+	// Inserts element e at index i of ArrayList, shifts following elements right
+	public void insert(int e, int i){
+		growIfFull();
+		if(validateIndex(i)){
+			capacity++;
+			for(int a=capacity-2; a>=i; a--){
+				array[a+1] = array[a];
+				/* debugging */System.out.println(this);
+			}
+			array[i] = e;
+			/* debugging */System.out.println(this);
+
+		}
+	}
+
 	// Replaces element at index i of ArrayList with new element e
 	public void replace(int i, int e){
 		if(validateIndex(i)){
