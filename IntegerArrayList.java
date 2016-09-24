@@ -19,15 +19,18 @@ public class IntegerArrayList {
 
 	// Inserts element e at index i of ArrayList, shifts following elements right
 	public void insert(int e, int i){
-		if(validateIndex(i)){
+		if(i==capacity){
+			add(i);
+		}
+		else if(validateIndex(i)){
 			growIfFull();
 			capacity++;
 			for(int a=capacity-2; a>=i; a--){
 				array[a+1] = array[a];
-				/* debugging */System.out.println(this);
+				// debugging System.out.println(this);
 			}
 			array[i] = e;
-			/* debugging */System.out.println(this);
+			// debugging System.out.println(this);
 
 		}
 	}
@@ -64,7 +67,7 @@ public class IntegerArrayList {
 			for(int i=0; i<capacity-1; i++){
 				returnString = returnString + array[i] + ", ";
 			}
-			returnString = returnString + array[capacity-1] + "] (size " + size + ")";
+			returnString = returnString + array[capacity-1] + "]" /*+" (capacity " + capacity + " , size " + size + ")"*/;
 			return returnString;
 		}
 	}
